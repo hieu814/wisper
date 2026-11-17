@@ -1,0 +1,31 @@
+name: flutter_whisper_cpp
+description: Offline speech transcription on Android and iOS using whisper.cpp and Dart FFI.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+  flutter: '>=3.24.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  ffi: ^2.1.0
+  crypto: ^3.0.6
+  path_provider: ^2.1.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  assets:
+    - assets/models/ggml-tiny.en-q5_1.bin
+    - assets/models/LICENSE.txt
+  plugin:
+    platforms:
+      android:
+        ffiPlugin: true
+      ios:
+        ffiPlugin: true

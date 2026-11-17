@@ -1,0 +1,20 @@
+group = "dev.flutter_whisper_cpp"
+version = "0.1.0"
+buildscript {
+    repositories { google(); mavenCentral() }
+    dependencies { classpath("com.android.tools.build:gradle:8.6.1") }
+}
+rootProject.allprojects { repositories { google(); mavenCentral() } }
+apply plugin: "com.android.library"
+android {
+    namespace = "dev.flutter_whisper_cpp"
+    compileSdk = 35
+    ndkVersion = "28.2.13676358"
+    externalNativeBuild {
+        cmake { path = "../src/CMakeLists.txt"; version = "3.22.1" }
+    }
+    defaultConfig {
+        minSdk = 21
+        ndk { abiFilters "arm64-v8a", "x86_64" }
+    }
+}

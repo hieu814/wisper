@@ -184,3 +184,9 @@ the native bridge compiled on Windows and transcribed the upstream JFK sample
 with `ggml-tiny.en-q5_1.bin`. The Android release APK also built successfully; its arm64-v8a and x86_64 native
 libraries have exported FFI symbols and 16 KB ELF alignment. iOS compilation and
 on-device runtime testing remain unverified in this Windows workspace.
+
+## Android Studio test project
+
+Open [`android_test/`](android_test/README.md) in Android Studio for a standalone
+app with one-tap bundled sample transcription, custom WAV testing, and an Android
+integration test. Its dependency points to this library using `path: ../`.
